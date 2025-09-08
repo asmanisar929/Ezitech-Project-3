@@ -1,0 +1,36 @@
+/* Navbar styling */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* space between logo and links */
+  align-items: center;
+  padding: 15px 40px;
+  background: #1a1a1a; /* dark background */
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 210vh;
+}
+.navbar h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00adb5; /* accent color */
+  margin: 0;
+}
+.links {
+  display: flex;
+  gap: 25px; /* spacing between links */
+}
+.links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.links a:hover {
+  color: #00adb5; /* hover accent */
+  transform: translateY(-2px);
+}
