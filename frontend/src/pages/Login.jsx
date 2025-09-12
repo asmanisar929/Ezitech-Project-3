@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/users/login`,
+        `${import.meta.env.REACT_APP_BACKEND_URL}/users/login`,
         {
           email,
           password,
