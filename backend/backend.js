@@ -1,8 +1,19 @@
+// backend.js
 import serverless from "serverless-http";
 import { app } from "./src/app.js";
 import connectDB from "./src/db/index.js";
 
-// Ensure DB connection before handling requests
-await connectDB();
+let isConnected = false;
 
-export default serverless(app);
+async function makeHandler() {
+  if (!isConnected) {
+    await connectDB();
+    isConnected = true;
+  }
+  return serverless(app);
+}
+
+export default async function handler(req, res) {
+  const h = await makeHandler();
+  return h(req, res);
+}
