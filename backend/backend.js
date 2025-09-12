@@ -1,14 +1,4 @@
-{
-  "builds": [
-    {
-        "src": "backend.js",
-         "use": "@vercel/node"
-         }
-  ],
-  "routes": [
-    {
-        "src": "/(.*)",
-         "dest": "/backend.js"
-        }
-  ]
-}
+import serverless from "serverless-http";
+import { app } from "./src/app.js"; //
+
+export default serverless(app);
