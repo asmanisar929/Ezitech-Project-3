@@ -10,5 +10,5 @@ export default async function handler(req, res) {
     isConnected = true;
   }
 
-  return app(req, res); // Express handles request directly
+  return app(req, res);
 }
