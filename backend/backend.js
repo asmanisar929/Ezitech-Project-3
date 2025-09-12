@@ -1,19 +1,14 @@
 // backend.js
-import serverless from "serverless-http";
 import { app } from "./src/app.js";
 import connectDB from "./src/db/index.js";
 
 let isConnected = false;
 
-async function makeHandler() {
+export default async function handler(req, res) {
   if (!isConnected) {
-    await connectDB();
+    await connectDB(); // ensure DB connection once
     isConnected = true;
   }
-  return serverless(app);
-}
 
-export default async function handler(req, res) {
-  const h = await makeHandler();
-  return h(req, res);
+  return app(req, res); // Express handles request directly
 }
