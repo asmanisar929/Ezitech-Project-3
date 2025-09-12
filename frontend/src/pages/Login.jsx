@@ -13,10 +13,13 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/v1/users/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/users/login`,
+        {
+          email,
+          password,
+        }
+      );
 
       login(res.data.message.user, res.data.message.accessToken);
 
