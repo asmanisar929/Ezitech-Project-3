@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
       try {
         console.log("Fetching profile with token:", token);
         const res = await axios.get(
-          `${import.meta.env.REACT_APP_BACKEND_URL}/api/v1/users/profile`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/profile`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
