@@ -17,7 +17,7 @@ function Register() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${import.meta.env.REACT_APP_BACKEND_URL}/users/register`,
+        `${import.meta.env.REACT_APP_BACKEND_URL}/api/v1/users/register`,
         {
           fullname, // ✅ matches backend schema
           username,
